@@ -1,0 +1,95 @@
+\chapter{Metric and Normed Spaces}
+
+\begin{exercise}
+{[Exercise 1.5, Page 30]}
+\end{exercise}
+
+\begin{proof}
+Define 
+	\begin{align*}
+        f \colon \mathbb{R}^{+} \cup \{0\} &\to \mathbb{R}\\
+        x &\mapsto \frac{x}{1 + x}
+	\end{align*}
+It is obvious that $f$ is an increasing function. 
+\end{proof}
+
+\begin{exercise}
+{[Exercise 1.6, Page 30]}
+\end{exercise}
+
+\begin{proof}
+Using $\epsilon - \delta$. 
+\end{proof}
+
+\begin{proposition}
+\label{proposition:limit points are closed}
+Given topology space $(X, \mathcal{T})$ and $A \subseteq X$, if $L(A)$ is the set of all limit points of $A$, then $L(A)$ is closed.  
+\end{proposition}
+
+\begin{exercise}
+{[Exercise 1.8, Page 31]}
+\end{exercise}
+
+\begin{proof}
+$C$ is closed by 
+\hyperref[proposition:limit points are closed]{Proposition \ref*{proposition:limit points are closed}}. 
+Therefore $\max C = \sup C$ and $\min C = \inf C$. \\
+Because $\mathbb{R}$ is complete, for each $n \in \mathbb{N}$ there exists $M(n) \in \mathbb{R}$ such that $M(n) = \sup_{i > n} \{x_{i}\}$. It is obvious that $M(n) \geq M(n+1)$ and there must exist $M \in \mathbb{R}$ such that $M = \inf_{n \in \mathbb{N}} \{M(n)\}$. \\
+$\forall c \in C$, $M(n) \geq c$. Thus $M \geq \max C$. \\
+It suffices to show that $M \leq \max C$. We prove it by contradiction. Suppose that $M > \max C$, then $\exists \varepsilon \in \mathbb{R}^{+}$ such that $M = \max C + 2\varepsilon$. So $\forall n \in \mathbb{N}, M(n) > \max C + \varepsilon$. So we can construct a bounded subsequence $\{y_{n}\}$ in $\{x_n\}$ such that $\forall n \in \mathbb{N}$, $\max C + \varepsilon \leq y_n \leq M(1)$. By Bolzano-Weierstrass Theorem{[Theorem 1.57, Page 23]}, there must exist a convergent subsequence $\{z_n\}$ in $\{y_n\}$. Define $z \coloneqq \lim_{n \to +\infty} z_{n}$, then $z \in \mathbb{R}$ and $z > \max C$, which violates the definition of $C$. Thus $M \leq \max C$. \\
+Therefore $M = \max C$. 
+\end{proof}
+
+\begin{proposition}
+\label{proposition:max-min}
+\emph{(max–min inequality)} For any function 
+	\begin{align*}
+		f \colon A \times B &\to \mathbb{R}\\
+		(a, b) &\mapsto f(a, b)
+	\end{align*}
+The following holds: 
+$$\sup_{a \in A} \inf_{b \in B} f(a, b) \leq \inf_{b \in B} \sup_{a \in A} f(a, b)$$
+\end{proposition}
+
+\begin{proof}
+	\begin{align*}
+		&\forall a \in A, \forall b \in B, \inf_{b \in B} f(a, b) \leq f(a, b) \\
+		\implies &\forall b \in B, \sup_{a \in A} \inf_{b \in B} f(a, b) \leq \sup_{a \in A} f(a, b) \\
+		\implies &\sup_{a \in A} \inf_{b \in B} f(a, b) \leq \inf_{b \in B} \sup_{a \in A} f(a, b) \\
+	\end{align*}
+\end{proof}
+
+\begin{exercise}
+{[Exercise 1.10, Page 30]}
+\end{exercise}
+
+\begin{proof}
+	\begin{align*}
+		\text{left}
+        &= \limsup_{n \to +\infty} (\inf_{\alpha \in A} x_{n, \alpha}) \\
+        &= \inf_{i \in \mathbb{N}} \sup_{n > i} \{ \inf_{\alpha \in A} x_{n, \alpha} \} 
+        && \qquad\text{ (definition) }\\
+        &= \inf_{i \in \mathbb{N}} \sup_{n > i} \inf_{\alpha \in A} \{x_{n, \alpha} \}_{n > i} \\
+        &\leq \inf_{i \in \mathbb{N}} \inf_{\alpha \in A} \sup_{n > i} \{x_{n, \alpha} \}_{n > i} 
+        && \qquad\text{ (\hyperref[proposition:max-min]{Proposition \ref*{proposition:max-min}}) }\\
+        &= \inf_{\alpha \in A} \inf_{i \in \mathbb{N}} \sup_{n > i} \{x_{n, \alpha} \}_{n > i} \\
+        &= \inf_{\alpha \in A} \inf_{i \in \mathbb{N}} \sup_{n > i} \{x_{n, \alpha} \} \\
+        &= \inf_{\alpha \in A} (\limsup_{n \to +\infty} x_{n, \alpha}) \\
+        &= \text{right}
+	\end{align*}
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

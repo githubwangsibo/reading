@@ -1,0 +1,95 @@
+\documentclass[multixcb, 14pt]{amstext-l}
+\usepackage{url}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\usepackage{mathtools} 
+\hypersetup{
+%    bookmarks=true,         % show bookmarks bar?
+%    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+%	pdfborder={0 0 0}, 
+%    pdftoolbar=true,        % show Acrobat’s toolbar?
+%    pdfmenubar=true,        % show Acrobat’s menu?
+%    pdffitwindow=false,     % window fit to page when opened
+%    pdfstartview={FitH},    % fits the width of the page to the window
+%    pdftitle={My title},    % title
+%    pdfauthor={Author},     % author
+%    pdfsubject={Subject},   % subject of the document
+%    pdfcreator={Creator},   % creator of the document
+%    pdfproducer={Producer}, % producer of the document
+%    pdfkeywords={keyword1, key2, key3}, % list of keywords
+%    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=[RGB]{0,128,128},          % color of internal links (change box color with linkbordercolor)
+%    citecolor=green,        % color of links to bibliography
+%    filecolor=cyan,         % color of file links
+%    urlcolor=magenta        % color of external links
+}
+
+\DeclareMathAlphabet{\mathzc}{OT1}{pzc}{m}{it}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{warning}[theorem]{Warning}
+\newtheorem{note}[theorem]{Note}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{xca}{Exercise}[section]
+
+\newcommand{\cs}[1]{\texttt{\char`\\#1}}
+\newcommand{\cls}[1]{\texttt{#1}}
+\newcommand{\pkg}[1]{\texttt{#1}}
+\newcommand{\env}[1]{\texttt{#1}}
+\newcommand{\opt}[1]{\texttt{[#1]}}
+
+\def\<#1>{$\langle$\textit{#1}$\rangle$}
+\newenvironment{exm}{%
+  \par
+  \begingroup
+    \parindent0pt
+    \leftskip2\normalparindent
+    \obeylines
+}{%
+    \par
+  \endgroup
+%  \noindent\ignorespaces
+}
+
+\begin{document}
+
+\frontmatter
+
+\makeatletter
+
+\makeatother
+
+\title{Applied Analysis}
+\author{WANG SIBO\\ \today}
+
+\maketitle
+
+\tableofcontents
+
+\mainmatter
+
+\input{chapter/chapter1}
+\input{chapter/chapter2}
+
+\chapter{}
+\chapter{}
+\chapter{}
+\chapter{}
+\chapter{}
+\chapter{}
+\chapter{}
+\chapter{}
+\chapter{}
+\chapter{}
+\chapter{}
+
+\end{document}
